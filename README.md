@@ -1,218 +1,189 @@
-# Sanjab Instagram Analytics - ابزار جامع تحلیل
+# Instagram Pages Automation Tool
+## ابزار اتوماسیون تحلیل صفحات اینستاگرام
 
-## توضیحات پروژه
+A comprehensive Instagram analytics automation tool designed for the Iranian market, specifically for analyzing lifestyle and women's style pages using the Sanjab platform.
 
-این پروژه یک ابزار جامع و پیشرفته برای استخراج و تحلیل آمار پیج‌های اینستاگرام از پلتفرم Sanjab است. این ابزار به صورت خودکار وارد حساب کاربری Sanjab می‌شود، لیستی از پیج‌های اینستاگرام را از فایل CSV می‌خواند و تمام آمارهای مهم را در یک فایل CSV جامع و یکتا ذخیره می‌کند.
+---
 
-## ویژگی‌های اصلی
+## 🚀 Features
 
-- **ورود خودکار**: ورود خودکار به حساب کاربری Sanjab
-- **پردازش دسته‌ای**: پردازش چندین پیج اینستاگرام به صورت خودکار
-- **استخراج آمار**: استخراج آمارهای مهم مانند نرخ تعامل، میانگین لایک، کامنت و غیره
-- **ذخیره‌سازی**: ذخیره نتایج در فایل‌های CSV جداگانه برای هر پیج
-- **پشتیبانی از فارسی**: پشتیبانی کامل از زبان فارسی در خروجی
+- **Sanjab Integration**: Automated login and data extraction from Sanjab platform
+- **Lifestyle Analysis**: Specialized analysis for lifestyle and women's style Instagram pages
+- **Engagement Metrics**: Comprehensive engagement rate analysis and ranking
+- **CSV Reporting**: Detailed CSV reports with Persian language support
+- **Influencer Search**: Advanced search functionality for finding relevant influencers
+- **Web Automation**: Selenium-based automation for seamless data collection
 
-## آمارهای جامع استخراج شده
+---
 
-### آمارهای اصلی:
-- **نرخ تعامل (Engagement Rate)** - درصد تعامل کاربران
-- **درصد رتبه نرخ تعامل** - رتبه در مقایسه با سایر پیج‌ها
-- **درصد بهتر از** - درصد پیج‌هایی که از این پیج ضعیف‌ترند
-- **درصد پیج‌های مشابه** - درصد پیج‌های مشابه
+## 📊 Analysis Results
 
-### آمارهای تعامل:
-- **لایک به ازای هر پست** - میانگین لایک در هر پست
-- **کامنت به ازای هر پست** - میانگین کامنت در هر پست
-- **میانگین بازدید هر Reel** - میانگین بازدید ویدیوهای Reel
-- **میانگین Share** - میانگین اشتراک‌گذاری
+### Top Lifestyle & Women's Style Pages (by Engagement Rate)
 
-### نسبت‌های مهم:
-- **نسبت بازدید به فالوور** - درصد بازدید نسبت به فالوور
-- **نسبت لایک به فالوور** - درصد لایک نسبت به فالوور
+| Rank | Page | Engagement Rate | Category |
+|------|------|----------------|----------|
+| 1 | @parinaz_home20 | 10.96% | Lifestyle |
+| 2 | @banoye_gilaniiiii | 10.86% | Lifestyle + Nature |
+| 3 | @shadiibahrampoor | 10.67% | Lifestyle + Kids |
+| 4 | @shabnam_shahrokhi | 10.41% | Lifestyle |
+| 5 | @reyhaan_khanoomii | 10.01% | Lifestyle + Food |
+| 6 | @negin_abedzadeh | 9.67% | Lifestyle |
+| 7 | @alirezaajafarzadeh | 9.19% | Social + Lifestyle |
+| 8 | @shervintarighaat | 9.13% | Lifestyle |
+| 9 | @soogol_shakeri | 9.02% | Lifestyle |
+| 10 | @iranian.beauty | 8.72% | Beauty |
 
-## پیش‌نیازها
+---
 
-### راه‌اندازی خودکار (پیشنهادی)
+## 🛠️ Installation
 
-برای راه‌اندازی خودکار پروژه، یکی از روش‌های زیر را انتخاب کنید:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/hashtonimco-creator/instagram_pages_automation.git
+   cd instagram_pages_automation
+   ```
 
-#### روش 1: استفاده از فایل Batch (Windows)
+2. **Set up virtual environment:**
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate  # Windows
+   source venv/bin/activate  # Linux/Mac
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Install ChromeDriver:**
+   - Download ChromeDriver from [here](https://chromedriver.chromium.org/)
+   - Add to system PATH or place in project directory
+
+---
+
+## 🎯 Usage
+
+### 1. Influencer Search
 ```bash
-setup.bat
+python sanjab_influencer_search.py
 ```
 
-#### روش 2: استفاده از Python Script
-```bash
-python setup.py
-```
-
-### راه‌اندازی دستی
-
-#### نصب کتابخانه‌های مورد نیاز
-
-```bash
-# ایجاد محیط مجازی
-python -m venv venv
-
-# فعال‌سازی محیط مجازی (Windows)
-venv\Scripts\activate
-
-# فعال‌سازی محیط مجازی (Linux/Mac)
-source venv/bin/activate
-
-# نصب کتابخانه‌ها
-pip install selenium
-```
-
-#### نصب ChromeDriver
-
-1. ChromeDriver را از [اینجا](https://chromedriver.chromium.org/) دانلود کنید
-2. آن را در مسیر PATH سیستم قرار دهید یا در همان پوشه پروژه قرار دهید
-
-### فایل CSV ورودی
-
-فایل `instagram_pages.csv` باید شامل نام پیج‌های اینستاگرام باشد (بدون @). مثال:
-
-```csv
-instagram_page
-tehran.style
-varzesh3
-bartarinha
-perspolis
-esteghlal.fc
-```
-
-## نحوه استفاده
-
-### روش 1: اجرای ساده
-```bash
-python run_analytics.py
-```
-
-### روش 2: اجرای پیشرفته
+### 2. Analytics Analysis
 ```bash
 python sanjab_analytics.py
 ```
 
-### روش 3: اجرای خودکار (Windows)
+### 3. Complete Suite
 ```bash
-run.bat
+python sanjab_complete_suite.py
 ```
 
-### مراحل اجرا:
-
-1. **فعال‌سازی محیط مجازی**:
-   ```bash
-   # Windows
-   venv\Scripts\activate
-   
-   # Linux/Mac
-   source venv/bin/activate
-   ```
-
-2. **اجرای اسکریپت**:
-   - برای اجرای ساده: `python run_analytics.py`
-   - برای اجرای پیشرفته: `python sanjab_analytics.py`
-
-3. **وارد کردن اطلاعات ورود**: هنگام اجرا، ایمیل و رمز عبور Sanjab را وارد کنید
-
-4. **انتظار برای تکمیل**: اسکریپت تمام پیج‌ها را تحلیل می‌کند
-
-5. **دریافت فایل خروجی**: فایل CSV جامع با تمام آمارها ایجاد می‌شود
-
-## ساختار فایل‌ها
-
-```
-sanjab_analysis/
-├── sanjab_analytics.py   # اسکریپت اصلی جامع
-├── run_analytics.py      # اسکریپت اجرای ساده
-├── instagram_pages.csv   # لیست پیج‌های اینستاگرام
-├── requirements.txt      # لیست کامل کتابخانه‌ها
-├── requirements_simple.txt # لیست ساده کتابخانه‌ها
-├── setup.py             # اسکریپت راه‌اندازی Python
-├── setup.bat            # اسکریپت راه‌اندازی Windows
-├── run.bat              # اسکریپت اجرای سریع Windows
-├── venv/                # محیط مجازی Python
-└── README.md            # این فایل
+### 4. Lifestyle Analysis
+```bash
+python create_lifestyle_analysis.py
 ```
 
-## توضیح کد
+---
 
-### تابع `login_to_sanjab()`
-- مرورگر Chrome را راه‌اندازی می‌کند
-- به صفحه ورود Sanjab می‌رود
-- اطلاعات ورود را وارد می‌کند
-- وارد حساب کاربری می‌شود
+## 📁 Project Structure
 
-### تابع `search_instagram_page(driver, page_name)`
-- باکس جستجو را پیدا می‌کند
-- نام پیج اینستاگرام را جستجو می‌کند
-- منتظر لود شدن نتایج می‌ماند
-
-### تابع `extract_data(driver)`
-- آمارهای مختلف پیج را از صفحه استخراج می‌کند
-- داده‌ها را در قالب دیکشنری برمی‌گرداند
-
-### تابع `save_to_csv(data, page_name)`
-- داده‌های استخراج شده را در فایل CSV ذخیره می‌کند
-- نام فایل شامل نام پیج و تاریخ/زمان است
-
-### تابع `read_pages_from_csv(filename)`
-- لیست پیج‌ها را از فایل CSV می‌خواند
-- نام پیج‌ها را در قالب لیست برمی‌گرداند
-
-### تابع `main()`
-- تابع اصلی که کل فرآیند را هماهنگ می‌کند
-- لیست پیج‌ها را می‌خواند
-- برای هر پیج، جستجو و استخراج داده انجام می‌دهد
-
-## خروجی
-
-برای هر پیج، یک فایل CSV جداگانه ایجاد می‌شود با نام:
 ```
-instagram_stats_[نام_پیج]_[تاریخ_زمان].csv
+instagram_pages_automation/
+├── sanjab_analytics.py          # Main analytics module
+├── sanjab_influencer_search.py  # Influencer search functionality
+├── sanjab_complete_suite.py     # Complete workflow automation
+├── create_lifestyle_analysis.py # Lifestyle pages analysis
+├── run_analytics_auto.py        # Automated analytics runner
+├── lifestyle_pages.csv          # Lifestyle pages list
+├── requirements.txt             # Python dependencies
+├── .gitignore                   # Git ignore rules
+└── README.md                    # This file
 ```
 
-مثال:
+---
+
+## 📈 Sample Output
+
+The tool generates comprehensive CSV reports including:
+
+- **Engagement Rate**: Percentage of followers who interact with content
+- **Likes per Post**: Average likes per Instagram post
+- **Comments per Post**: Average comments per post
+- **Reel Views**: Average views for Instagram Reels
+- **Shares**: Average shares per post
+- **Follower Ratios**: Various engagement ratios
+
+---
+
+## 🔧 Configuration
+
+### Sanjab Credentials
+Update the credentials in the script files:
+```python
+EMAIL = "your_email@example.com"
+PASSWORD = "your_password"
 ```
-instagram_stats_tehran.style_20241201_143022.csv
+
+### Search Filters
+Customize search parameters:
+```python
+category = "مد و فشن"  # Fashion & Style
+follower_min = 1000    # Minimum followers
+follower_max = 1000000 # Maximum followers
+gender = "زن"          # Female
 ```
 
-## نکات مهم
+---
 
-1. **امنیت**: اطلاعات ورود در کد قرار دارد. برای استفاده در محیط تولید، از متغیرهای محیطی استفاده کنید.
+## 📊 Results Files
 
-2. **نرخ درخواست**: بین هر درخواست 3 ثانیه مکث وجود دارد تا از محدودیت‌های سرور جلوگیری شود.
+- `lifestyle_women_analysis_*.csv` - Detailed lifestyle pages analysis
+- `comprehensive_instagram_analytics_*.csv` - Full analytics data
+- `final_lifestyle_report.md` - Persian language report
 
-3. **مدیریت خطا**: کد شامل مدیریت خطا برای موارد مختلف است.
+---
 
-4. **مرورگر**: اسکریپت از Chrome استفاده می‌کند. اطمینان حاصل کنید که Chrome نصب باشد.
+## 🌟 Key Metrics Analyzed
 
-## عیب‌یابی
+1. **Engagement Rate**: Primary metric for page performance
+2. **Likes per Post**: Content popularity indicator
+3. **Comments per Post**: Audience interaction level
+4. **Reel Performance**: Video content effectiveness
+5. **Share Rate**: Content virality potential
+6. **Follower Engagement**: Overall audience quality
 
-### خطای ChromeDriver
-- اطمینان حاصل کنید که ChromeDriver نصب و در PATH قرار دارد
-- نسخه ChromeDriver باید با نسخه Chrome شما سازگار باشد
+---
 
-### خطای ورود
-- اطلاعات ورود را بررسی کنید
-- اطمینان حاصل کنید که حساب کاربری فعال است
+## 📝 Notes
 
-### خطای استخراج داده
-- ممکن است ساختار صفحه Sanjab تغییر کرده باشد
-- XPath های استفاده شده در کد را بررسی کنید
+- Designed specifically for Iranian Instagram market
+- Supports Persian/Farsi language content
+- Optimized for lifestyle and beauty content analysis
+- Compatible with Sanjab platform API
+- Generates reports in both CSV and Markdown formats
 
-## مجوز
+---
 
-این پروژه برای استفاده آموزشی و شخصی طراحی شده است. لطفاً قوانین و مقررات Sanjab را رعایت کنید.
+## 🤝 Contributing
 
-## مشارکت
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-برای بهبود این پروژه، می‌توانید:
-- باگ‌ها را گزارش دهید
-- ویژگی‌های جدید پیشنهاد دهید
-- کد را بهبود دهید
+---
 
-## تماس
+## 📄 License
 
-برای سوالات و پشتیبانی، با توسعه‌دهنده تماس بگیرید.
+This project is open source and available under the MIT License.
+
+---
+
+## 📞 Contact
+
+- **GitHub**: [hashtonimco-creator](https://github.com/hashtonimco-creator)
+- **Email**: hashtonim.co@gmail.com
+
+---
+
+*Built with ❤️ for the Iranian Instagram analytics community*
