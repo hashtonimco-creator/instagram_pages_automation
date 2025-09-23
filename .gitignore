@@ -16,14 +16,18 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual Environment
 venv/
 env/
 ENV/
+env.bak/
+venv.bak/
 .venv/
 
 # IDE
@@ -35,18 +39,56 @@ ENV/
 
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Logs
+# Project specific
 *.log
-
-# ChromeDriver
-chromedriver.exe
-chromedriver
-
-# Temporary files
 *.tmp
-*.temp
+temp/
+tmp/
 
-# CSV results (optional - you might want to keep these)
-# *.csv
+# Data files (keep structure, ignore content)
+data/*.csv
+data/*.xlsx
+data/*.json
+!data/سنجاب.htm
+!data/سنجاب_files/
+
+# Results (keep structure, ignore content)
+results/*.csv
+results/*.xlsx
+results/*.json
+
+# Chrome driver
+chromedriver*
+geckodriver*
+
+# Selenium screenshots
+screenshots/
+*.png
+*.jpg
+*.jpeg
+
+# Credentials
+.env
+config.ini
+secrets.json
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

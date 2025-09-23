@@ -1,14 +1,26 @@
 @echo off
-echo 🚀 اجرای Sanjab Instagram Analytics
-echo ====================================
+echo ========================================
+echo Instagram Influencer Analysis Tool
+echo ========================================
+echo.
 
-echo فعال‌سازی محیط مجازی...
+REM Check if virtual environment exists
+if not exist "venv\Scripts\activate.bat" (
+    echo ❌ Virtual environment not found!
+    echo Please run install.bat first
+    pause
+    exit /b 1
+)
+
+REM Activate virtual environment
+echo 🔧 Activating virtual environment...
 call venv\Scripts\activate.bat
 
-echo.
-echo اجرای اسکریپت جامع...
-python run_analytics.py
+REM Run main script
+echo 🚀 Running tool...
+python main.py
 
 echo.
-echo اسکریپت به پایان رسید.
+echo 👋 Goodbye!
 pause
+

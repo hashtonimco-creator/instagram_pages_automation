@@ -1,189 +1,190 @@
-# Instagram Pages Automation Tool
-## ابزار اتوماسیون تحلیل صفحات اینستاگرام
+# 🎯 Instagram Influencer Analysis Tool
 
-A comprehensive Instagram analytics automation tool designed for the Iranian market, specifically for analyzing lifestyle and women's style pages using the Sanjab platform.
+A powerful tool for extracting, analyzing and ranking Iranian Instagram influencers in various domains, especially lifestyle and family.
 
----
+## ✨ Features
 
-## 🚀 Features
+- 🔍 **Advanced Search**: Search influencers with various filters
+- 📊 **Comprehensive Analysis**: Calculate engagement rate, follower stats and key metrics
+- 🎯 **Smart Categorization**: Filter by topic, gender and follower count
+- 📈 **Reporting**: Generate detailed and understandable reports
+- 🔄 **Data Extraction**: Extract real information from Sanjab platform
+- 📁 **Organization**: Clean and professional project structure
 
-- **Sanjab Integration**: Automated login and data extraction from Sanjab platform
-- **Lifestyle Analysis**: Specialized analysis for lifestyle and women's style Instagram pages
-- **Engagement Metrics**: Comprehensive engagement rate analysis and ranking
-- **CSV Reporting**: Detailed CSV reports with Persian language support
-- **Influencer Search**: Advanced search functionality for finding relevant influencers
-- **Web Automation**: Selenium-based automation for seamless data collection
-
----
-
-## 📊 Analysis Results
-
-### Top Lifestyle & Women's Style Pages (by Engagement Rate)
-
-| Rank | Page | Engagement Rate | Category |
-|------|------|----------------|----------|
-| 1 | @parinaz_home20 | 10.96% | Lifestyle |
-| 2 | @banoye_gilaniiiii | 10.86% | Lifestyle + Nature |
-| 3 | @shadiibahrampoor | 10.67% | Lifestyle + Kids |
-| 4 | @shabnam_shahrokhi | 10.41% | Lifestyle |
-| 5 | @reyhaan_khanoomii | 10.01% | Lifestyle + Food |
-| 6 | @negin_abedzadeh | 9.67% | Lifestyle |
-| 7 | @alirezaajafarzadeh | 9.19% | Social + Lifestyle |
-| 8 | @shervintarighaat | 9.13% | Lifestyle |
-| 9 | @soogol_shakeri | 9.02% | Lifestyle |
-| 10 | @iranian.beauty | 8.72% | Beauty |
-
----
-
-## 🛠️ Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/hashtonimco-creator/instagram_pages_automation.git
-   cd instagram_pages_automation
-   ```
-
-2. **Set up virtual environment:**
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate  # Windows
-   source venv/bin/activate  # Linux/Mac
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Install ChromeDriver:**
-   - Download ChromeDriver from [here](https://chromedriver.chromium.org/)
-   - Add to system PATH or place in project directory
-
----
-
-## 🎯 Usage
-
-### 1. Influencer Search
-```bash
-python sanjab_influencer_search.py
-```
-
-### 2. Analytics Analysis
-```bash
-python sanjab_analytics.py
-```
-
-### 3. Complete Suite
-```bash
-python sanjab_complete_suite.py
-```
-
-### 4. Lifestyle Analysis
-```bash
-python create_lifestyle_analysis.py
-```
-
----
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
-instagram_pages_automation/
-├── sanjab_analytics.py          # Main analytics module
-├── sanjab_influencer_search.py  # Influencer search functionality
-├── sanjab_complete_suite.py     # Complete workflow automation
-├── create_lifestyle_analysis.py # Lifestyle pages analysis
-├── run_analytics_auto.py        # Automated analytics runner
-├── lifestyle_pages.csv          # Lifestyle pages list
-├── requirements.txt             # Python dependencies
-├── .gitignore                   # Git ignore rules
+sanjab_analysis/
+├── src/                          # Main code files
+│   ├── sanjab_analytics.py      # Page analysis class
+│   ├── sanjab_influencer_search.py  # Influencer search class
+│   ├── sanjab_complete_suite.py # Complete suite class
+│   └── extract_sanjab_real_data.py  # Real data extraction
+├── data/                         # Data files
+│   ├── sanjab.html              # Sanjab HTML file
+│   ├── sanjab_files/            # Related Sanjab files
+│   └── *.csv                    # CSV data files
+├── results/                      # Generated reports
+│   └── *.md                    # Detailed reports
+├── docs/                        # Documentation
+├── scripts/                     # Helper scripts
+├── main.py                      # Main execution file
+├── requirements.txt             # Dependencies
 └── README.md                    # This file
 ```
 
----
+## 🚀 Installation and Setup
 
-## 📈 Sample Output
+### Prerequisites
+- Python 3.7 or higher
+- Valid Sanjab account
+- Chrome browser
 
-The tool generates comprehensive CSV reports including:
+### Installation Steps
 
-- **Engagement Rate**: Percentage of followers who interact with content
-- **Likes per Post**: Average likes per Instagram post
-- **Comments per Post**: Average comments per post
-- **Reel Views**: Average views for Instagram Reels
-- **Shares**: Average shares per post
-- **Follower Ratios**: Various engagement ratios
-
----
-
-## 🔧 Configuration
-
-### Sanjab Credentials
-Update the credentials in the script files:
-```python
-EMAIL = "your_email@example.com"
-PASSWORD = "your_password"
+1. **Clone the project**:
+```bash
+git clone https://github.com/hashtonimco-creator/instagram_pages_automation.git
+cd instagram_pages_automation
 ```
 
-### Search Filters
-Customize search parameters:
-```python
-category = "مد و فشن"  # Fashion & Style
-follower_min = 1000    # Minimum followers
-follower_max = 1000000 # Maximum followers
-gender = "زن"          # Female
+2. **Create virtual environment**:
+```bash
+python -m venv venv
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
 ```
 
----
+3. **Install dependencies**:
+```bash
+pip install -r requirements.txt
+```
 
-## 📊 Results Files
+4. **Run the tool**:
+```bash
+python main.py
+```
 
-- `lifestyle_women_analysis_*.csv` - Detailed lifestyle pages analysis
-- `comprehensive_instagram_analytics_*.csv` - Full analytics data
-- `final_lifestyle_report.md` - Persian language report
+## 🎮 Usage
 
----
+### Method 1: Text Interface
+```bash
+python main.py
+```
+Then select the desired option from the displayed menu.
 
-## 🌟 Key Metrics Analyzed
+### Method 2: Direct Execution
+```python
+from src.sanjab_analytics import SanjabAnalytics
+from src.sanjab_influencer_search import SanjabInfluencerSearch
 
-1. **Engagement Rate**: Primary metric for page performance
-2. **Likes per Post**: Content popularity indicator
-3. **Comments per Post**: Audience interaction level
-4. **Reel Performance**: Video content effectiveness
-5. **Share Rate**: Content virality potential
-6. **Follower Engagement**: Overall audience quality
+# Search influencers
+searcher = SanjabInfluencerSearch()
+searcher.run_influencer_search(
+    email="payegan@gmail.com",
+    password="3xdVgd8XiMvxMPj",
+    category="Lifestyle",
+    gender="Female"
+)
 
----
+# Analyze pages
+analyzer = SanjabAnalytics()
+analyzer.run_analysis("data/pages.csv", "email", "password")
+```
 
-## 📝 Notes
+## 📊 Sample Results
 
-- Designed specifically for Iranian Instagram market
-- Supports Persian/Farsi language content
-- Optimized for lifestyle and beauty content analysis
-- Compatible with Sanjab platform API
-- Generates reports in both CSV and Markdown formats
+### Top 10 Lifestyle and Family Pages:
 
----
+| Rank | Page Name | Engagement Rate | Followers | Description |
+|------|-----------|-----------------|-----------|-------------|
+| 1 | **@asalbano_life** | 87.28% | 153,498 | Asal Bano/Daily Life/Tips/Housekeeping |
+| 2 | **@life.nadi73** | 44.14% | 68,976 | Nadia/Cooking/Lifestyle |
+| 3 | **@nazanintips** | 24.91% | 187,639 | Nazanin Tips ✨ |
+| 4 | **@shiriino__** | 24.65% | 260,575 | Shirin |
+| 5 | **@shaqayeqnoie** | 23.76% | 167,154 | Shaghayegh Noei |
 
-## 🤝 Contributing
+## 🔧 Advanced Settings
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+### Search Filter Settings:
+```python
+# Follower range
+min_followers = 50000
+max_followers = 500000
 
----
+# Categories
+categories = ["Lifestyle", "Family", "Cooking"]
 
-## 📄 License
+# Gender
+gender = "Female"  # or "Male"
+```
 
-This project is open source and available under the MIT License.
+### Browser Settings:
+```python
+# Headless mode
+headless = True
 
----
+# Chrome options
+chrome_options = [
+    "--no-sandbox",
+    "--disable-dev-shm-usage",
+    "--disable-gpu"
+]
+```
 
-## 📞 Contact
+## 📈 Analysis Metrics
 
-- **GitHub**: [hashtonimco-creator](https://github.com/hashtonimco-creator)
+- **Engagement Rate**: Percentage of audience engagement
+- **Follower Count**: Number of followers
+- **Average Likes**: Average likes per post
+- **Average Comments**: Average comments per post
+- **Growth Rate**: Follower growth speed
+- **Audience Quality**: Percentage of real followers
+
+## 🛠️ Troubleshooting
+
+### Common Issues:
+
+1. **ChromeDriver Error**:
+```bash
+pip install --upgrade webdriver-manager
+```
+
+2. **Selenium Error**:
+```bash
+pip install --upgrade selenium
+```
+
+3. **Sanjab Connection Issue**:
+- Check internet connection
+- Verify email and password
+- Disable VPN
+
+## 📝 License and Contribution
+
+This project is released under MIT license. To contribute:
+
+1. Fork the project
+2. Create a new branch
+3. Commit your changes
+4. Send a Pull Request
+
+## 📞 Support
+
 - **Email**: hashtonim.co@gmail.com
+- **GitHub Issues**: [Issues Page](https://github.com/hashtonimco-creator/instagram_pages_automation/issues)
+- **Documentation**: `docs/` folder
+
+## 🎯 Commercial Use
+
+This tool is designed for commercial and marketing purposes. In commercial use:
+
+- Follow Instagram rules
+- Respect influencer privacy
+- Use data ethically
 
 ---
 
-*Built with ❤️ for the Iranian Instagram analytics community*
+**Developer**: Hashtonim Creator  
+**Version**: 2.0.0  
+**Last Updated**: September 14, 2025
